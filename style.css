@@ -1,0 +1,302 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .custom-font {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 6vw; /* Escala o tamanho da fonte de acordo com a largura da tela */
+  }
+  
+  header {
+    background-color: #ebffd1;
+    color: #000000;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .imagem {
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .nome-site {
+    flex: 1; /* Faz o nome do site ocupar o espaço central */
+    text-align: center; /* Centraliza o texto */
+    font-size: 1.5rem; /* Ajuste de tamanho da fonte */
+  }
+  
+  .widjets {
+    display: flex;
+    justify-content: flex-end; /* Alinha os widgets à direita */
+    gap: 1rem; /* Espaçamento entre os widgets */
+  }
+  
+  .subheader {
+    display: flex;
+    justify-content: center;
+    background-color: #a4d470;
+    padding: 0.5rem;
+  }
+  
+  .detailheader {
+    background-color: #1ba100;
+    width: 100%;
+    height: 10px;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  
+  main {
+    background-color: #f6ffed;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0.3rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .cards-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os cartões se organizem em múltiplas linhas em telas menores */
+    gap: 1rem; /* Espaçamento entre os cartões */
+  }
+  
+  .card {
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    border-radius: 0;
+    flex: 1 1 calc(33.333% - 1rem); /* Responsivo: permite 3 cards por linha em telas médias */
+    min-width: 300px;
+    max-width: 300px;
+    height: 400px; /* Altura fixa para todos os cards */
+    text-align: center; /* Centraliza o conteúdo do card */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total do card */
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Mantém a proporção da imagem dentro do limite */
+    margin-bottom: 1rem;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo no meio do card */
+    flex: 1;
+  }
+  
+  .preco-promocao {
+    font-size: 1rem;
+    color: red;
+    text-decoration: line-through; /* Adiciona o risco ao preço de promoção */
+    margin: 0;
+  }
+  
+  .preco-atual {
+    font-size: 1.5rem;
+    color: green;
+    font-weight: bold;
+    margin: 0.5rem 0 0 0;
+  }
+  
+  .carousel-inner {
+    padding: 1em;
+  }
+  
+  .product-slider .card {
+    border: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .product-slider .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-slider .carousel-inner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .img-second-slider {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background: url(https://networdagro.com.br/blog/wp-content/uploads/2021/01/agro-5-0.jpg);
+  }
+  
+  .second-slider {
+    justify-content: center;
+    height: 800px;
+  }
+  
+  .balao-second-slider {
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 500px;
+    background-color: rgba(247, 249, 250, 0.6);
+    border-radius: 70px;
+    z-index: 100;
+  }
+  
+  /* Responsivo para cards do second-slider */
+  .cards-second-slider {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly; /* Espaço entre os cartões */
+    gap: 0.3rem; /* Espaçamento entre os cartões */
+    padding: 1rem;
+    align-items: center;
+  }
+  
+  .card-second-slider {
+    flex: 1 1 calc(33.333% - 1rem); /* Responsivo: permite 3 cards por linha */
+    max-width: 250px; /* Largura máxima dos cartões */
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    background-color: rgba(247, 249, 250);
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5rem; /* Espaçamento lateral entre os cartões */
+  }
+  
+  .card-second-slider img {
+    width: 100%;
+    height: 150px; /* Altura fixa para a imagem */
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-second-slider .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .footer {
+    padding: 50px 0;
+    background-color: rgba(79, 92, 71);
+  }
+  
+  h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .payment-methods img {
+    margin-right: 10px;
+  }
+  
+  .security-logos img {
+    margin-right: 10px;
+  }
+  
+  .copyright {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f5f5f5;
+  }
+  
+  .payment-logo {
+    width: 50px; /* Largura desejada para as imagens */
+    height: 50px; /* Altura desejada para as imagens */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    margin: 5px; /* Espaçamento entre as imagens */
+  }
+  
+  /* Opcional: Centralizar as imagens em um container */
+  .security-logos,
+  .payment-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Responsividade para Cards */
+  @media (max-width: 768px) {
+    .card-second-slider {
+      flex: 1 1 calc(50% - 2rem); /* Dois cards por linha em telas menores */
+    }
+  
+    .card {
+      flex: 1 1 calc(50% - 1rem); /* Ajusta para 2 cards por linha em telas menores */
+    }
+  
+    header {
+      justify-content: space-between;
+      padding: 0.5rem;
+    }
+  
+    .imagem {
+      width: 100px; /* Reduz o tamanho da imagem em telas pequenas */
+    }
+  
+    .nome-site {
+      flex: 1;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  
+    .widjets {
+      justify-content: flex-end;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card-second-slider {
+      flex: 1 1 100%; /* Um card por linha em telas muito pequenas */
+    }
+  
+    .card {
+      flex: 1 1 100%; /* Ajusta para 1 card por linha em telas muito pequenas */
+    }
+  }
+  
