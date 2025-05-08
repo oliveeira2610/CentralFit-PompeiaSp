@@ -13,6 +13,12 @@
       color: #fff;
       margin: 0;
       padding: 20px;
+      background-repeat: no-repeat;
+      background-size: cover; /* Faz o gradiente ocupar toda a tela */
+      min-height: 100vh; /* Garante altura mínima da tela */
+      color: white;
+      padding: 20px;
+      margin: 0;
     }
 
     .faq-section {
@@ -70,15 +76,22 @@
     }
 
     .social-icons a {
-      color: white;
-      font-size: 2.5rem;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+  color: #ffffff;
+  font-size: 2.8rem;
+  padding: 15px;
+  background: #112b52;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+  transition: all 0.3s ease;
+}
 
-    .social-icons a:hover {
-      color: #00aaff;
-      transform: scale(1.2);
-    }
+.social-icons a:hover {
+  color: #00aaff;
+  background: #0e1d47;
+  transform: scale(1.25);
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.6);
+}
+
 
     @media (max-width: 600px) {
       .faq-section h1 {
@@ -177,15 +190,16 @@
 <body>
 
     <header style="position: relative; z-index: 20;">
-        <div class="navigation-container">
+      <div class="navigation-container">
+        <a href="index.html">
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
-    
-          <nav class="navigation-menu">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="sobreNos.html" class="nav-item">Central Fit</a>
-            <a href="duvidasFrequentes.html" class="nav-item">Dúvidas frequentes</a>
-            <a href="planos.html" class="nav-item">Nossos Planos</a>
-          </nav>
+        </a>
+        <nav class="navigation-menu">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="sobreNos.html" class="nav-item">Central Fit</a>
+          <a href="duvidasFrequentes.html" class="nav-item">Dúvidas frequentes</a>
+          <a href="planos.html" class="nav-item">Nossos Planos</a>
+        </nav>
     
           <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
@@ -262,15 +276,15 @@
     <div class="contact-section">
       <h2>Fale com a gente</h2>
       <div class="social-icons">
-        <a href="https://wa.me/SEUNUMERO" target="_blank" aria-label="WhatsApp">
+        <a href="https://wa.me/5514999024567" target="_blank" aria-label="WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/SUAINSTAGRAM" target="_blank" aria-label="Instagram">
+        <a href="https://www.instagram.com/centralfit.pompeia/" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://www.facebook.com/SUAFACEBOOK" target="_blank" aria-label="Facebook">
+        <!-- <a href="https://www.facebook.com/SUAFACEBOOK" target="_blank" aria-label="Facebook">
           <i class="fab fa-facebook"></i>
-        </a>
+        </a> -->
       </div>
     </div>
   </section>
@@ -280,6 +294,7 @@
       mobileMenu.classList.toggle('show');
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </body>
 </html>

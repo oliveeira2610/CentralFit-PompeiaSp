@@ -17,11 +17,15 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    body {
-      background: linear-gradient(to bottom, #09154f, #152685);
-      color: white;
-      padding: 20px;
-    }
+  body {
+    background: linear-gradient(to bottom, #09154f, #152685);
+    background-repeat: no-repeat;
+    background-size: cover; /* Faz o gradiente ocupar toda a tela */
+    min-height: 100vh; /* Garante altura mínima da tela */
+    color: white;
+    padding: 20px;
+    margin: 0;
+  }
 
     .navigation-container {
       width: 100%;
@@ -195,8 +199,9 @@
 
   <header style="position: relative; z-index: 20;">
     <div class="navigation-container">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
-
+      <a href="index.html">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
+      </a>
       <nav class="navigation-menu">
         <a href="index.html" class="nav-item">Home</a>
         <a href="sobreNos.html" class="nav-item">Central Fit</a>

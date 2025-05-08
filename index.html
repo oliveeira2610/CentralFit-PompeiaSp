@@ -18,6 +18,12 @@
       font-family: Arial, sans-serif;
       color: white;
       background-color: black;
+      background-repeat: no-repeat;
+      background-size: cover; /* Faz o gradiente ocupar toda a tela */
+      min-height: 100vh; /* Garante altura mínima da tela */
+      color: white;
+ 
+      margin: 0;
     }
 
     /* HERO SECTION */
@@ -269,7 +275,6 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
       position: relative;
       background: linear-gradient(to bottom, #021c3b, #032e5d);
       color: white;
@@ -281,6 +286,7 @@
     .center-content-description{
       display: flex;
       flex-direction: row;
+      align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 13%;
@@ -536,8 +542,9 @@
     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a7ffa2bead12b0d69908c9c109d38e5fa533b368?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Background" class="background-image" />
 
     <div class="navigation-container">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
-
+      <a href="index.html">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
+      </a>
       <nav class="navigation-menu">
         <a href="index.html" class="nav-item">Home</a>
         <a href="sobreNos.html" class="nav-item">Central Fit</a>
@@ -561,7 +568,7 @@
 
     <h1 class="hero-heading">CONHEÇA</h1>
     <h2 class="hero-subheading">CENTRAL FIT</h2>
-    <a class="cta-button" href="/planos.html">Confira nossos Planos</a>
+    <a class="cta-button" href="planos.html">Confira nossos Planos</a>
   </section>
 
   <!-- VIDEO QUOTE SECTION CORRIGIDA -->
@@ -571,7 +578,7 @@
         <div class="quote-content">
             <div class="quote-left">
             <div class="video-embed">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5ctVd8N1zps" 
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tUykoP30Gb0" 
                 title="CENTRAL FIT - A MELHOR ACADEMIA DE POMPÉIA E REGIÃO"
                 frameborder="0" allowfullscreen></iframe>
             </div>
@@ -645,7 +652,8 @@
           </div>
       
           <div class="academia-botao">
-            <button href="sobreNos.html">Venha Conhecer!</button>
+            <a class="cta-button" href="sobreNos.html">Venha Conhecer!</a>
+       
           </div>
         </div>
       </div>

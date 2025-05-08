@@ -16,8 +16,14 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #01244e, #0a407a);
+  background: linear-gradient(135deg, #0a1a3e, #152f6a);
   color: white;
+  background-repeat: no-repeat;
+  background-size: cover; /* Faz o gradiente ocupar toda a tela */
+  min-height: 100vh; /* Garante altura mínima da tela */
+  color: white;
+  padding: 20px;
+  margin: 0;
   
 }
 
@@ -257,7 +263,7 @@ body {
 
     .feature-title {
       font-size: 1.4rem;
-      color: #00aaff;
+      color: #ffffff;
       margin-bottom: 10px;
       font-weight: bold;
     }
@@ -284,8 +290,9 @@ body {
         <section class="hero-section">
 
           <div class="navigation-container">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
-      
+            <a href="index.html">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
+            </a>
             <nav class="navigation-menu">
               <a href="index.html" class="nav-item">Home</a>
               <a href="sobreNos.html" class="nav-item">Central Fit</a>
