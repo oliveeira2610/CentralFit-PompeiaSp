@@ -1,346 +1,650 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Agricola</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Central Fit</title>
+  <style>
+    /* Reset e fonte geral */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: black;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      min-height: 95vh;
+      text-align: center;
+      overflow: hidden;
+      gap: 20px;
+    }
+
+    .background-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+
+    .navigation-container {
+      width: 100%;
+      max-width: 1500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      max-width: 180px;
+      height: auto;
+    }
+
+    .navigation-menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-item {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+
+    .nav-item:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-heading {
+      margin: 80px 0 10px;
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+    .hero-subheading {
+      font-size: 100px;
+      font-weight: 800;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: 600;
+      background-color: #4338ca;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background-color: #3730a3;
+    }
+
+    /* Mobile dropdown menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      border-radius: 10px;
+      padding: 15px;
+      gap: 15px;
+      z-index: 100;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+      
+      min-height: 80vh;
+      
+    }
+      .navigation-menu {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+
+      .hero-heading {
+        font-size: 30px;
+        margin-top: 40px;
+      }
+
+      .hero-subheading {
+        font-size: 40px;
+      }
+
+      .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
+
+    /* ===== SEÇÃO DE VÍDEO E CITAÇÃO ===== */
+    .quote-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 100px 20px;
+    color: white;
+    }
+
+    .quote-section .background-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7; /* leve transparência da textura */
+    }
+
+    .quote-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .quote-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 40px;
+    }
+
+    .quote-left, .quote-right {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    /* Estilo do vídeo embedado */
+    .video-embed iframe {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    /* Estilo da citação */
+    blockquote {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+    }
+
+    blockquote footer {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: right;
+    }
+
+    /* Responsivo para telas menores */
+    @media (max-width: 768px) {
+    .quote-content {
+        flex-direction: column;
+    }
+
+    .quote-left, .quote-right {
+        flex: 1 1 100%;
+    }
+
+    .video-embed iframe {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    blockquote {
+        font-size: 1.4rem;
+    }
+    }
+
+
+    .central-fit-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  background: linear-gradient(to bottom, #021c3b, #032e5d);
+  color: white;
+  padding: 100px 5%;
+  overflow: hidden;
+  gap: 40px;
+}
+
+.background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.background-blur {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  filter: blur(9.75px);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-centered {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 54px;
+  width: auto;
+}
+
+.content-section {
+  flex: 1;
+  z-index: 1;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.content-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.content-header h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.brand-name {
+  font-weight: 800;
+  font-style: italic;
+  color: #00aaff;
+}
+
+.content-description {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  margin-top: 10px;
+}
+
+.gym-image-container {
+  flex: 1;
+  max-width: 480px;
+  z-index: 1;
+}
+
+.gym-image {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 25px 19px 23.5px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .central-fit-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-section,
+  .gym-image-container {
+    max-width: 100%;
+  }
+
+  .logo-centered {
+    top: 60px;
+    height: 40px;
+  }
+}
+
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#academia-container {
+  font-family: 'Chakra Petch', sans-serif;
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/9b8aa43bb28ef0fdf4a7875435c4db3021964cf7?placeholderIfAbsent=true");
+  background-size: cover;         /* Faz a imagem cobrir todo o container */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Impede que a imagem se repita */
+  backdrop-filter: blur(4px);     /* Aplica o efeito de desfoque */
+  -webkit-backdrop-filter: blur(4px); /* Suporte para Safari */
+  
+  color: white;
+
+  overflow-x: hidden;
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 80vh;
+}
+
+
+/* Imagens sobrepostas */
+#academia-imagens {
+  position: relative;
+  width: 320px;
+  height: 450px;
+}
+
+.academia-img-box {
+  position: absolute;
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.academia-img-box:first-child {
+  top: 40px;
+  left: 40px;
+  border: 4px solid #3b82f6;
+  z-index: 2;
+}
+
+.academia-img-box:last-child {
+  top: 0;
+  left: 0;
+  border: 3px solid white;
+  z-index: 1;
+}
+
+/* Texto */
+#academia-texto {
+  max-width: 600px;
+  text-align: left;
+}
+
+#academia-texto .academia-titulo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+#academia-texto .academia-lista {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-family: 'Mitr', sans-serif;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+#academia-texto .academia-descricao {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #cccccc;
+}
+
+/* Botão */
+#academia-texto .academia-botao {
+  margin-top: 30px;
+}
+
+#academia-texto .academia-botao button {
+  background-color: #3730a3;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: 'Mitr', sans-serif;
+}
+
+#academia-texto .academia-botao button:hover {
+  background-color: #4f46e5;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  #academia-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #academia-imagens {
+    width: 300px;
+    height: 420px;
+  }
+
+  #academia-texto {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  #academia-texto .academia-titulo {
+    font-size: 1.8rem;
+  }
+
+  #academia-texto .academia-lista {
+    font-size: 1rem;
+  }
+
+  #academia-texto .academia-descricao {
+    font-size: 0.95rem;
+  }
+
+  #academia-texto .academia-botao button {
+    width: 100%;
+  }
+}
+
+
+  </style>
 </head>
-
 <body>
-  <header>
 
-    <img class="imagem" src="https://png.pngtree.com/png-clipart/20230102/original/pngtree-agricultural-logo-png-image_8855542.png" alt="trator">
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a7ffa2bead12b0d69908c9c109d38e5fa533b368?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Background" class="background-image" />
 
-    <h1 class="custom-font" id="nome-site">AgroRural</h1>
+    <div class="navigation-container">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
 
-    <div class="widjets">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30px" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-      </svg>
-
-      <svg xmlns="http://www.w3.org/2000/svg" width="30px" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-      </svg>
-    </div>
-
-  </header>
-  <div class="detailheader"></div>
-  <div class="subheader">
-    <div class="navbar">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Carretas</a>
-              </li>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Tanques</a>
-              </li>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Injetores</a>
-              </li>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Peças</a>
-              </li>
-              <li class="nav-item dropdown">
-                <!--           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-          </ul>
-        </li> -->
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="O que gostaria ?" aria-label="Search">
-              <button type="submit" style="border: none; background: none;">
-                <img src="https://cdn-icons-png.flaticon.com/512/64/64673.png" alt="Submit" style="width: 30px; height: 30px;">
-              </button>
-            </form>
-          </div>
-        </div>
+      <nav class="navigation-menu">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="sobreNos.html" class="nav-item">Central Fit</a>
+        <a href="duvidasFrequentes.html" class="nav-item">Dúvidas frequentes</a>
+        <a href="planos.html" class="nav-item">Nossos Planos</a>
       </nav>
-    </div>
-  </div>
-  <main>
-    <div id="carouselExampleCaptions" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://images.tcdn.com.br/img/img_prod/723200/1646327744_whatsapp_image_2022-02-23_at_16.41.22.jpeg" class="d-block w-100" alt="..." style="height:5%">
-          <div class="carousel-caption d-none d-md-block">
-            <h5></h5>
-            <p></p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://images.tcdn.com.br/img/img_prod/723200/1574791296_1570045400_4617bdd984.png" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5></h5>
-            <p></p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://images.tcdn.com.br/img/img_prod/723200/1575377832_1570045401_c9bf59c485.png" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5></h5>
-            <p></p>
-          </div>
-        </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="sobreNos.html">Central Fit</a>
+        <a href="duvidasFrequentes.html">Dúvidas frequentes</a>
+        <a href="planos.html">Nossos Planos</a>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <div class="container my-5">
-      <h2 class="text-center custom-font">Produtos em Destaque</h2>
-      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-12 col-md-4">
-                <div class="card">
-                  <img src="https://images.tcdn.com.br/img/img_prod/723200/cocho_de_polietileno_0_90m_85_litros_949_2_9bb711198fb312fdd6022c9e8595a0e7.jpg" class="card-img-top" alt="Produto 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Cocho de Polietileno
-                    </h5>
-                    <p class="card-text">Comedouro, Cocho ou Saleiro com capacidade para 85 Litros.</p>
-                    <p class="preco-promocao">R$ 199,90</p>
-                    <p class="preco-atual">R$ 149,90</p>
 
-                    <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                    <a href="#" class="btn btn-primary">Detalhes</a>
+    <h1 class="hero-heading">CONHEÇA</h1>
+    <h2 class="hero-subheading">CENTRAL FIT</h2>
+    <a class="cta-button"  href="planos.html">Confira nossos Planos</a>
+  </section>
 
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="card">
-                  <img src="https://images.tcdn.com.br/img/img_prod/723200/roda_dupla_aro_16_de_aco_6_furos_centro_118mm_3033_1_76b1e4f695d9c6033ee4fc3d9e307b87.jpg" class="card-img-top" alt="Produto 2">
-                  <div class="card-body">
-                    <h5 class="card-title">Roda Dupla</h5>
-                    <p class="card-text">Roda Dupla Aro 16 de Aço 6 Furos- Centro 118mm.</p>
-                    <p class="preco-promocao">R$ 199,90</p>
-                    <p class="preco-atual">R$ 149,90</p>
-
-                    <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                    <a href="#" class="btn btn-primary">Detalhes</a>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="card">
-                  <img src="https://images.tcdn.com.br/img/img_prod/723200/registro_esfera_manual_3_vias_de_fluxo_continuo_rosca_femea_bsp_1_2118_1_4f566eb4372c328afb8606efa0782e7d.jpg" class="card-img-top" alt="Produto 3">
-                  <div class="card-body">
-                    <h5 class="card-title">Registro Esfera Manual</h5>
-                    <p class="card-text">Registro Esfera Manual 3 Vias de Fluxo Contínuo Rosca Fêmea </p>
-                    <p class="preco-promocao">R$ 199,90</p>
-                    <p class="preco-atual">R$ 149,90</p>
-
-                    <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                    <a href="#" class="btn btn-primary">Detalhes</a>
-                  </div>
-                </div>
-              </div>
+  <!-- VIDEO QUOTE SECTION CORRIGIDA -->
+    <section class="quote-section">
+        <div class="quote-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/89ff01eb2396436e2be977176313bc5b0cf1edbd?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Background" class="background-image">
+        <div class="quote-content">
+            <div class="quote-left">
+            <div class="video-embed">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5ctVd8N1zps" 
+                title="CENTRAL FIT - A MELHOR ACADEMIA DE POMPÉIA E REGIÃO"
+                frameborder="0" allowfullscreen></iframe>
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-12 col-md-4">
-                <div class="card">
-                  <img src="https://images.tcdn.com.br/img/img_prod/723200/corpo_do_venturi_completo_incorporador_16997_1_35f8d858bded31ca0755c4b6f21692dd.jpg" class="card-img-top" alt="Produto 4">
-                  <div class="card-body">
-                    <h5 class="card-title">Corpo do Venturi</h5>
-                    <p class="card-text">Corpo do Venturi completo (Incorporador).</p>
-                    <p class="preco-promocao">R$ 199,90</p>
-                    <p class="preco-atual">R$ 149,90</p>
-
-                    <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                    <a href="#" class="btn btn-primary">Detalhes</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="card">
-                  <img src="https://images.tcdn.com.br/img/img_prod/723200/bico_do_lavador_incorporador_quadrado_050591_aluminio_16987_1_44c06d015a46a8042013cf585be770a3.jpg" class="card-img-top" alt="Produto 5">
-                  <div class="card-body">
-                    <h5 class="card-title">Bico do Lavador</h5>
-                    <p class="card-text">Bico do Lavador (Incorporador Quadrado) 050591 - Alumínio.</p>
-                    <p class="preco-promocao">R$ 199,90</p>
-                    <p class="preco-atual">R$ 149,90</p>
-
-                    <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                    <a href="#" class="btn btn-primary">Detalhes</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="card">
-                  <img src="https://images.tcdn.com.br/img/img_prod/723200/incorporador_de_defensivo_agricola_com_cinta_suporte_16883_1_bbb62914e205137c5a7a9d5c8a07adc2.jpg" class="card-img-top" alt="Produto 6">
-                  <div class="card-body">
-                    <h5 class="card-title">a </h5>
-                    <p class="card-text">Incorporador de defensivo Agrícola com Cinta Suporte.</p>
-                    <p class="preco-promocao">R$ 199,90</p>
-                    <p class="preco-atual">R$ 149,90</p>
-
-                    <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                    <a href="#" class="btn btn-primary">Detalhes</a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+            <div class="quote-right">
+            <blockquote>
+                <p>“ Comece onde você está,<br>
+                use o que você tem e faça o<br>
+                que você pode. ”</p>
+                <footer>- Arthur Ashe</footer>
+            </blockquote>
+            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Próximo</span>
-        </button>
-      </div>
-    </div>
+        </div>
+    </section>
 
-    <div class="second-slider">
-      <div class="img-second-slider">
-        <h2 class="text-center custom-font">Mais vendidos</h2>
-        <div class="balao-second-slider">
-          <div class="cards-second-slider">
-            <div class="card-second-slider">
-              <img src="https://images.tcdn.com.br/img/img_prod/723200/corpo_do_venturi_completo_incorporador_16997_1_35f8d858bded31ca0755c4b6f21692dd.jpg" class="card-img-top" alt="Produto 4">
-              <div class="card-body">
-                <h5 class="card-title">Corpo do Venturi</h5>
-                <p class="card-text">Corpo do Venturi completo (Incorporador).</p>
-                <p class="preco-promocao">R$ 199,90</p>
-                <p class="preco-atual">R$ 149,90</p>
-                <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                <a href="#" class="btn btn-primary">Detalhes</a>
-              </div>
-            </div>
-            <div class="card-second-slider">
-              <img src="https://images.tcdn.com.br/img/img_prod/723200/bico_do_lavador_incorporador_quadrado_050591_aluminio_16987_1_44c06d015a46a8042013cf585be770a3.jpg" class="card-img-top" alt="Produto 5">
-              <div class="card-body">
-                <h5 class="card-title">Bico do Lavador</h5>
-                <p class="card-text">Bico do Lavador (Incorporador Quadrado) 050591 - Alumínio.</p>
-                <p class="preco-promocao">R$ 199,90</p>
-                <p class="preco-atual">R$ 149,90</p>
-                <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                <a href="#" class="btn btn-primary">Detalhes</a>
-              </div>
-            </div>
-            <div class="card-second-slider">
-              <img src="https://images.tcdn.com.br/img/img_prod/723200/incorporador_de_defensivo_agricola_com_cinta_suporte_16883_1_bbb62914e205137c5a7a9d5c8a07adc2.jpg" class="card-img-top" alt="Produto 6">
-              <div class="card-body">
-                <h5 class="card-title">Incorporador</h5>
-                <p class="card-text">Incorporador de defensivo Agrícola com Cinta Suporte.</p>
-                <p class="preco-promocao">R$ 199,90</p>
-                <p class="preco-atual">R$ 149,90</p>
-                <p class="text-muted">R$ 92,15 à vista com desconto ou 3x de R$ 31,67 sem juros</p>
-                <a href="#" class="btn btn-primary">Detalhes</a>
-              </div>
-            </div>
+    <!-- BLOCO CENTRAL FIT DESCRITIVO -->
+    <main class="central-fit-section">
+        <div class="background-elements">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9019730e22f229a1b12c517fb711605d7d79ea9?placeholderIfAbsent=true"
+            alt="" class="background-blur">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e57dea0ef758abc58e0efd0970c2195a247a37b?placeholderIfAbsent=true"
+            alt="Central Fit logo" class="logo-centered">
+        </div>
+    
+        <article class="content-section">
+        <header class="content-header">
+            <h1>MAIS QUE UMA ACADEMIA!</h1>
+            <h2>AQUI É <span class="brand-name">CENTRAL FIT</span></h2>
+        </header>
+        <p class="content-description">
+            Aqui na <strong>Central Fit</strong>, você encontra um centro de treinamento completo, com os melhores
+            equipamentos e uma diversidade que atende a todos os objetivos. Contamos com especialistas qualificados e
+            profissionais preparados para guiar você na sua jornada de transformação. Seja para ganhar desempenho, saúde
+            ou qualidade de vida, aqui você treina com quem entende do assunto! Nosso compromisso é com a sua evolução,
+            porque sua meta também é a nossa. Aberta para todos – do iniciante ao avançado, do jovem à melhor idade. Venha
+            fazer parte da Central Fit e descubra o seu melhor! 🚀💪
+        </p>
+        </article>
+    
+        <figure class="gym-image-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/37508ee3e5b3da871240f025d6773d3eb73f403d?placeholderIfAbsent=true"
+            alt="Central Fit gym interior" class="gym-image">
+        </figure>
+    </main>
+
+    <!-- Conteúdo da landing page da academia -->
+    <div id="academia-container">
+        <div id="academia-imagens">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dcfc357314c269ff9c0754cea7130d80c889d211?placeholderIfAbsent=true" alt="Foto da academia" class="academia-img-box" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d88788a71ae4bd93fb01c5103ac65a33287d8228?placeholderIfAbsent=true" alt="Foto da academia" class="academia-img-box" />
+        </div>
+        
+     
+        <div id="academia-texto">
+          <div class="academia-titulo">UM NOVO ESTILO DE ACADEMIA</div>
+      
+          <div class="academia-lista">
+            <div>.Dois ambientes</div>
+            <div>.Ambientes climatizados</div>
+            <div>.Quatro banheiros com chuveiro</div>
+            <div>.Aparelhos novos de extrema qualidade</div>
+            <div>.Espaço para alongamento</div>
+          </div>
+      
+          <div class="academia-descricao">
+            Nossa linha de máquinas se destaca não apenas pelo design moderno,
+            mas também pela qualidade, segurança e eficiência na execução dos
+            movimentos.
+          </div>
+      
+          <div class="academia-botao">
+            <a class="cta-button" href="sobreNos.html">Venha Conhecer!</a>
           </div>
         </div>
       </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+        
 
-    </div>
-
-  </main>
-
-  <div class="footer">
-    <div class="row">
-      <div class="col-md-4">
-        <h3>Institucional</h3>
-        <ul>
-          <li><a href="#">Empresa</a></li>
-          <li><a href="#">Como comprar</a></li>
-          <li><a href="#">Segurança</a></li>
-          <li><a href="#">Envio</a></li>
-          <li><a href="#">Pagamento</a></li>
-          <li><a href="#">Tempo de Garantia</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h3>Atendimento</h3>
-        <ul>
-          <li><i class="fas fa-phone-alt"></i> <a href="tel:+5514996304287">(14) 99630-4287</a></li>
-          <li><i class="fas fa-clock"></i> Horários de Funcionamento: <br>Atendimento de segunda a sexta das 7:00 às 17:00</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h3>Minha Conta</h3>
-        <ul>
-          <li><a href="#">Criar uma Conta</a></li>
-          <li><a href="#">Minha Conta</a></li>
-          <li><a href="#">Meus Pedidos</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3>Forma de Pagamento</h3>
-        <img class="payment-logo" src="https://logospng.org/download/boleto/boleto-icone-logo-4096.png" alt="Boleto">
-        <img class="payment-logo" src="https://logospng.org/download/itau/itau-4096.png" alt="Itaú">
-        <img class="payment-logo" src="https://logodownload.org/wp-content/uploads/2014/10/bradesco-logo-0.png" alt="Bradesco">
-        <img class="payment-logo" src="https://logospng.org/download/visa/logo-visa-4096.png" alt="Visa">
-        <img class="payment-logo" src="https://logospng.org/download/mastercard/logo-mastercard-4096.png" alt="Mastercard">
-        <img class="payment-logo" src="https://1000logos.net/wp-content/uploads/2021/05/Diners-Club-logo.png" alt="Diners Club">
-        <img class="payment-logo" src="https://logospng.org/download/american-express/logo-american-express-4096.png" alt="American Express">
-        <img class="payment-logo" src="https://logodownload.org/wp-content/uploads/2017/04/elo-logo.png" alt="Elo">
-        <img class="payment-logo" src="https://logospng.org/download/hipercard/logo-hipercard-4096.png" alt="Hipercard">
-        <img class="payment-logo" src="https://logospng.org/download/paypal/logo-paypal-4096.png" alt="PayPal">
-      </div>
-      <div class="security-logos">
-        <img class="payment-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Google_Safe_Browsing_logo.png/512px-Google_Safe_Browsing_logo.png" alt="Safe Browsing Google">
-        <img class="payment-logo" src="https://www.mercadofacil.com.br/wp-content/uploads/2016/11/loja-protegida.png" alt="Loja Protegida">
-
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; 2023 [Nome da sua empresa]. Todos os direitos reservados.</p>
-  </div>
-
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
 </body>
-
 </html>

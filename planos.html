@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escolha Seu Plano | Central Fit</title>
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #09154f, #152685);
+      color: white;
+      padding: 20px;
+    }
+
+    .navigation-container {
+      width: 100%;
+      max-width: 1500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      max-width: 180px;
+      height: auto;
+    }
+
+    .navigation-menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-item {
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+
+    .nav-item:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      border-radius: 10px;
+      padding: 15px;
+      gap: 15px;
+      z-index: 10;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .navigation-menu {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+    }
+
+    .plan-section {
+      padding: 100px 20px 50px;
+      text-align: center;
+    }
+
+    .plan-section h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #00aaff;
+    }
+
+    .plan-section p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #e2e8f0;
+    }
+
+    .plan-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .plan-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 2px solid #00aaff;
+      border-radius: 16px;
+      padding: 30px 20px;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease, background-color 0.3s;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px);
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .plan-title {
+      font-size: 1.8rem;
+      color: #00aaff;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .plan-price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .plan-features li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+
+    .select-button {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .select-button:hover {
+      background-color: #0284c7;
+    }
+
+    @media (max-width: 768px) {
+      .plan-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header style="position: relative; z-index: 20;">
+    <div class="navigation-container">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
+
+      <nav class="navigation-menu">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="sobreNos.html" class="nav-item">Central Fit</a>
+        <a href="duvidasFrequentes.html" class="nav-item">Dúvidas frequentes</a>
+        <a href="planos.html" class="nav-item">Nossos Planos</a>
+      </nav>
+
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="sobreNos.html">Central Fit</a>
+        <a href="duvidasFrequentes.html">Dúvidas frequentes</a>
+        <a href="planos.html">Nossos Planos</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="plan-section">
+    <h1>Escolha Seu Plano</h1>
+    <p>Encontre o plano perfeito para sua jornada fitness</p>
+
+    <div class="plan-cards">
+      <!-- PLANO 1 -->
+      <div class="plan-card">
+        <div class="plan-title">Plano Almoço</div>
+        <div class="plan-price">R$ 119,90/mês</div>
+        <ul class="plan-features">
+          <li>Horário: 11h às 14h</li>
+          <li>Duração: 12 Meses</li>
+          <li>Pagamento: 12x</li>
+          <li>Adesão: Grátis</li>
+        </ul>
+        <a class="select-button" href="planoAlmoço.html">Escolher Plano</a>
+      </div>
+
+      <!-- PLANO 2 -->
+      <div class="plan-card">
+        <div class="plan-title">Plano Anual</div>
+        <div class="plan-price">R$ 139,90/mês</div>
+        <ul class="plan-features">
+          <li>Duração: 12 Meses</li>
+          <li>Pagamento: 12x</li>
+          <li>Adesão: Grátis</li>
+        </ul>
+        <a class="select-button" href="planoAnual.html">Escolher Plano</a>
+      </div>
+
+      <!-- PLANO 3 -->
+      <div class="plan-card">
+        <div class="plan-title">Plano Semestral</div>
+        <div class="plan-price">R$ 169,90/mês</div>
+        <ul class="plan-features">
+          <li>Duração: 6 Meses</li>
+          <li>Pagamento: 6x</li>
+          <li>Adesão: Grátis</li>
+        </ul>
+        <a class="select-button" href="planoSemestral.html">Escolher Plano</a>
+      </div>
+
+      <!-- PLANO 4 -->
+      <div class="plan-card">
+        <div class="plan-title">Plano Trimestral</div>
+        <div class="plan-price">R$ 179,90/mês</div>
+        <ul class="plan-features">
+          <li>Duração: 3 Meses</li>
+          <li>Pagamento: 3x</li>
+          <li>Adesão: Grátis</li>
+        </ul>
+        <a class="select-button" href="planoTrimestral.html">Escolher Plano</a>
+      </div>
+
+      <!-- PLANO 5 -->
+      <div class="plan-card">
+        <div class="plan-title">Plano Mensal</div>
+        <div class="plan-price">R$ 199,90/mês</div>
+        <ul class="plan-features">
+          <li>Duração: 1 Mês</li>
+          <li>Pagamento: À vista</li>
+          <li>Adesão: Grátis</li>
+        </ul>
+        <a class="select-button" href="planoMensal.html">Escolher Plano</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
