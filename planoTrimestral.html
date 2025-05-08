@@ -16,15 +16,22 @@
       background: linear-gradient(to bottom, #09154f, #152685);
       color: #fff;
       width: 100%;
-      height: 100vh;
+      height: 100%;
       display: grid;
-    align-items: center;  
-    background-repeat: no-repeat;
-    background-size: cover; /* Faz o gradiente ocupar toda a tela */
-    min-height: 100vh; /* Garante altura mínima da tela */
-    color: white;
-    padding: 20px;
-    margin: 0;
+      align-items: center;  
+      background-repeat: no-repeat;
+      background-size: cover; /* Faz o gradiente ocupar toda a tela */
+      min-height: 100vh; /* Garante altura mínima da tela */
+      padding: 20px;
+      margin: 0;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 40%;
+      height: auto;
+      display: grid;
+      margin: 0 auto 0px;
     }
 
     .plan-container {
@@ -38,6 +45,7 @@
     }
 
     .plan-title {
+      margin-top: 30px;
       font-size: 2rem;
       font-weight: bold;
       color: #00aaff;
@@ -95,7 +103,7 @@
 
     .back-button-page{
       display: inline-block;
-      background-color: #0071aa;
+      width: 90%;
       color: white;
       padding: 12px 24px;
       border-radius: 30px;
@@ -103,6 +111,7 @@
       font-weight: bold;
       text-decoration: none;
       transition: background-color 0.3s;
+      padding: 0;
     }
 
     .back-button:hover {
@@ -123,9 +132,13 @@
     
 
 
+  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d38a319fd9d766cc30c0ccba8fee65d4699b3e?placeholderIfAbsent=true&apiKey=85289a55ca3d40cbb16bd145c88a24fb" alt="Logo" class="logo" />
+
+
   <div class="plan-container">
+    
     <div class="back-button-container">
-      <a href="planos.html" class="back-button-page"> Voltar aos Planos</a>
+      <a href="planos.html" class="back-button-page"> ← |ㅤ Voltar aos Planos </a>
     </div>
     <div class="plan-title">Plano Trimestral</div>
     <div class="plan-price">R$ 179,90/mês</div>
