@@ -99,6 +99,7 @@
       color: white;
       cursor: pointer;
       transition: background-color 0.3s;
+      text-decoration: none;
     }
 
     .cta-button:hover {
@@ -264,18 +265,28 @@
 
 
     .central-fit-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
-  background: linear-gradient(to bottom, #021c3b, #032e5d);
-  color: white;
-  padding: 100px 5%;
-  overflow: hidden;
-  gap: 40px;
-}
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      background: linear-gradient(to bottom, #021c3b, #032e5d);
+      color: white;
+      padding: 50px 15%;
+      overflow: hidden;
+      gap: 40px;
+
+    }
+    .center-content-description{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 13%;
+      margin-top: 130px;
+      
+    }
 
 .background-elements {
   position: absolute;
@@ -299,7 +310,7 @@
 
 .logo-centered {
   position: absolute;
-  top: 100px;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
   height: 54px;
@@ -309,7 +320,7 @@
 .content-section {
   flex: 1;
   z-index: 1;
-  max-width: 600px;
+  max-width: 700px;
   margin-top: 20px;
 }
 
@@ -417,14 +428,14 @@
 
 .academia-img-box:first-child {
   top: 40px;
-  left: 40px;
+  left: 15px;
   border: 4px solid #3b82f6;
   z-index: 2;
 }
 
 .academia-img-box:last-child {
   top: 0;
-  left: 0;
+  left: -15px;
   border: 3px solid white;
   z-index: 1;
 }
@@ -567,9 +578,9 @@
             </div>
             <div class="quote-right">
             <blockquote>
-                <p>“ Comece onde você está,<br>
+                <p>“Comece onde você está,<br>
                 use o que você tem e faça o<br>
-                que você pode. ”</p>
+                que você pode.”</p>
                 <footer>- Arthur Ashe</footer>
             </blockquote>
             </div>
@@ -585,7 +596,8 @@
         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e57dea0ef758abc58e0efd0970c2195a247a37b?placeholderIfAbsent=true"
             alt="Central Fit logo" class="logo-centered">
         </div>
-    
+        
+      <div class="center-content-description">
         <article class="content-section">
         <header class="content-header">
             <h1>MAIS QUE UMA ACADEMIA!</h1>
@@ -593,10 +605,9 @@
         </header>
         <p class="content-description">
             Aqui na <strong>Central Fit</strong>, você encontra um centro de treinamento completo, com os melhores
-            equipamentos e uma diversidade que atende a todos os objetivos. Contamos com especialistas qualificados e
-            profissionais preparados para guiar você na sua jornada de transformação. Seja para ganhar desempenho, saúde
-            ou qualidade de vida, aqui você treina com quem entende do assunto! Nosso compromisso é com a sua evolução,
-            porque sua meta também é a nossa. Aberta para todos – do iniciante ao avançado, do jovem à melhor idade. Venha
+            equipamentos e uma diversidade que atende a todos os objetivos. <br> Contamos com especialistas qualificados e
+            profissionais preparados para guiar você na sua jornada de transformação.<br> Seja para ganhar desempenho, saúde
+            ou qualidade de vida, aqui você treina com quem entende do assunto! <br> Aberta para todos do iniciante ao avançado, do jovem à melhor idade. <br> Venha
             fazer parte da Central Fit e descubra o seu melhor! 🚀💪
         </p>
         </article>
@@ -605,6 +616,7 @@
         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/37508ee3e5b3da871240f025d6773d3eb73f403d?placeholderIfAbsent=true"
             alt="Central Fit gym interior" class="gym-image">
         </figure>
+      </div>
     </main>
 
     <!-- Conteúdo da landing page da academia -->
@@ -633,7 +645,7 @@
           </div>
       
           <div class="academia-botao">
-            <button>Venha Conhecer!</button>
+            <button href="sobreNos.html">Venha Conhecer!</button>
           </div>
         </div>
       </div>
