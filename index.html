@@ -59,6 +59,7 @@
       align-items: center;
       padding: 10px 20px;
       margin: 0 auto;
+    
     }
 
     .logo {
@@ -541,7 +542,6 @@
 
 
 
-
 #footer {
   background-color: #111;
   color: #fff;
@@ -555,20 +555,30 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
+  gap: 2%;
 }
 
 .footer-column {
   flex: 1 1 220px;
-  margin: 20px;
-  min-width: 200px;
+    margin: 20px;
+    min-width: 200px;
+    justify-content: center;
+    display: grid;
+    align-items: stretch;
+    justify-items: center;
+    align-content: stretch;
+    
+
 }
 
 .footer-title {
   font-size: 18px;
   text-transform: uppercase;
   color: #fff;
-  margin-bottom: 20px;
   font-weight: bold;
+  height: 30px;
+  margin: 0;
+  padding:0;
 }
 
 .footer-column p {
@@ -580,6 +590,12 @@
 .footer-links {
   list-style: none;
   padding-left: 0;
+  height: 140px;
+  margin-top: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-links li {
@@ -591,6 +607,7 @@
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s;
+
 }
 
 .footer-links a:hover {
@@ -787,8 +804,6 @@
         <div class="footer-container">
           <div class="footer-column">
             <h3 class="footer-title">Sobre a Central Fit</h3>
-            <p>Transformando vidas com saúde e disciplina desde 2024.</p>
-            <p>Localizada no coração da cidade, equipada com aparelhos modernos e profissionais dedicados.</p>
             <ul class="footer-links">
               <li><a href="https://www.google.com/maps/place/R.+Cyro+Ventura+Barbosa,+235+-+Centro,+Pomp%C3%A9ia+-+SP,+17580-000/data=!4m2!3m1!1s0x949583294a6cbacd:0x503714524b7e34e5?sa=X&ved=1t:242&ictx=111"><i class="fa fa-map-marker"></i> Rua Cyro Ventura Barbosa 235, Pompéia</a></li>
               <li><a href="#"><i class="fa fa-phone"></i> (14) 99902-4567</a></li>
@@ -799,11 +814,11 @@
           <div class="footer-column">
             <h3 class="footer-title">Planos</h3>
             <ul class="footer-links">
-              <li><a href="planoMensal.html">Plano Mensal</a></li>
-              <li><a href="planoTrimestral.html">Plano Trimestral</a></li>
-              <li><a href="planoSemestral.html">Plano Semestral</a></li>
-              <li><a href="planoAnual.html">Plano Anual</a></li>
-              <li><a href="planoAlmoço.html">Plano Almoço</a></li>
+              <li><a href="Planos/planoMensal.html">Plano Mensal</a></li>
+              <li><a href="Planos/planoTrimestral.html">Plano Trimestral</a></li>
+              <li><a href="Planos/planoSemestral.html">Plano Semestral</a></li>
+              <li><a href="Planos/planoAnual.html">Plano Anual</a></li>
+              <li><a href="Planos/planoAlmoço.html">Plano Almoço</a></li>
             </ul>
           </div>
       
