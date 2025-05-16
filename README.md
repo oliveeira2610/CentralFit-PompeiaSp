@@ -4,8 +4,7 @@ Bem-vindo ao repositório do site oficial da **Central Fit**, uma academia moder
 
 ## 🌐 Acesse
 
-🔗 [https://oliveeira2610.github.io/CentralFit-PompeiaSp/index.html](https://oliveeira2610.github.io/CentralFit-PompeiaSp/index.html)  
-*(Substitua com o link real do GitHub Pages quando publicado)*
+🔗 [https://oliveeira2610.github.io/CentralFit-PompeiaSp/](https://oliveeira2610.github.io/CentralFit-PompeiaSp/)  
 
 ---
 
@@ -68,7 +67,7 @@ central-fit/
 
 1. Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/central-fit.git
+[https://github.com/oliveeira2610/CentralFit-PompeiaSp.git](https://github.com/oliveeira2610/CentralFit-PompeiaSp.git)
 ```
 
 2. Navegue até o projeto:
@@ -99,11 +98,11 @@ cd central-fit
 
 ## 👨‍💻 Autor
 
-Desenvolvido por [Oliveeira](https://github.com/oliveeira2610) com apoio do ChatGPT  
-Este projeto faz parte do portfólio educacional de front-end.
+Desenvolvido por [Oliveeira](https://github.com/oliveeira2610).
+Este projeto faz parte do portfólio profissional de front-end.
 
 ---
 
 ## 📄 Licença
 
-Este projeto está sob licença MIT. Sinta-se livre para utilizar e adaptar.
+[Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/)
