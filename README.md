@@ -67,7 +67,7 @@ central-fit/
 
 1. Clone este repositório:
 ```bash
-[https://github.com/oliveeira2610/CentralFit-PompeiaSp.git](https://github.com/oliveeira2610/CentralFit-PompeiaSp.git)
+https://github.com/oliveeira2610/CentralFit-PompeiaSp.git
 ```
 
 2. Navegue até o projeto:
